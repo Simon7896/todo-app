@@ -1,5 +1,6 @@
 export type TodoItem = {
-  id: number,
+  key: number,
   title: string,
-  description: string
+  description: string,
+  checked: boolean
 }
