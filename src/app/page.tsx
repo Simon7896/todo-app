@@ -7,10 +7,11 @@ import AddButton from "./components/add-button";
 import AddTodoItemForm from "./components/add-todo-item-form";
 
 export default function Home() {
-  const [id, setId] = useState(0);
-  const [list, setList] = useState(Array<TodoItem>);
-  const [showForm, setShowForm] = useState(false);
+  const [id, setId] = useState(0); // Track key for each list item
+  const [list, setList] = useState(Array<TodoItem>); // List of to-do items
+  const [showForm, setShowForm] = useState(false); // State of form visibility
 
+  // Change 'checked' status of given to-do item
   function handleCheckChange(item: TodoItem) {
     const updatedList = list.map((currentItem: TodoItem, ) => {
       return (currentItem.key === item.key) ? item : currentItem;
@@ -18,6 +19,10 @@ export default function Home() {
     setList(updatedList)
   }
 
+  /*
+    Creates a new to-do item, assigns a unique key to it, and
+    uses setState to update the list.
+  */
   function insertListItem(title: string, description: string) {
     let item: TodoItem = {
       key: id,
@@ -30,14 +35,14 @@ export default function Home() {
     setShowForm(false);
   }
 
+  /*
+    Removes the specified to-do item from the list using
+    its ID, and updates the list state
+  */
   function deleteListItem(item: TodoItem) {
     setList(list.filter((currentItem: TodoItem) => {
       return currentItem.key !== item.key;
     }))
-  }
-
-  function showTodoItemForm() {
-
   }
 
   const EmptyMessage = () => {

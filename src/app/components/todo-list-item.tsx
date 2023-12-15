@@ -26,7 +26,10 @@ export default function ListItem({ item, handleCheckChange, handleDelete }: Prop
         />
       </td>
       <td className="td">
-        <button onClick={() => {handleDelete(item)}} className="text-red-500 hover:text-red-300">Delete</button>
+        <button 
+          onClick={() => {handleDelete(item)}} 
+          className="text-red-500 hover:text-red-300"
+        >Delete</button>
       </td>
     </tr>
   )
