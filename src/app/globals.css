@@ -2,26 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer components {
+  .card {
+    background-color: theme('colors.white');
+    border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.6');
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .form-control {
+    appearance: none;
+    display: block;
+    width: theme('width.full');
+    background-color: theme('colors.gray.100');
+    color: theme('textColor.gray.700');
+    border-width: 1px;
+    border-radius: theme('borderRadius.sm');
+    padding: 3 4;
+    margin-bottom: theme('margin.3');
+    line-height: theme('lineHeight.tight');
+  }
+
+  .form-label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: theme('letterSpacing.wide');
+    color: theme('textColor.gray.700');
+    font-weight: theme('fontWeight.bold');
+  }
+
+  .btn {
+    border-radius: theme('borderRadius.md');
+    border-width: theme('borderWidth.2');
+    color: theme('textColor.white');
+    padding: theme('padding.1') theme('padding.3');
+  }
+
+  .th {
+    padding: theme('padding.3') theme('padding.6');
+    border-bottom-width: theme('borderRadius.sm');
+  }
+
+  .td {
+    border-bottom-width: theme('borderRadius.sm');
+    padding: theme('padding.2') theme('padding.6');
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    font-size: larger;
 }
